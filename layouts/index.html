@@ -1,0 +1,17 @@
+{{ define "main" }}
+{{ $pages := where .Site.RegularPages "Section" "posts" }}
+{{ $last := sub (len $pages) 1 }}
+{{ range $i, $p := $pages }}
+{{ $anchor := $p.Title | urlize }}
+<article class="post-entry{{ if (modBool $i 2) }} post-entry--alt{{ end }}{{ if eq $i 0 }} post-entry--first{{ end }}{{ if eq $i $last }} post-entry--last{{ end }}" id="{{ $anchor }}">
+  {{ if $p.Params.image }}
+  <img src="{{ $p.Params.image | relURL }}" alt="{{ $p.Title }}">
+  {{ end }}
+  <h2><a href="#{{ $anchor }}">{{ $p.Title }}</a></h2>
+  <time datetime='{{ $p.Date.Format "2006-01-02" }}' hidden>
+    {{ $p.Date.Format (default "02 Jan, 2006" $.Site.Params.dateFormat) }}
+  </time>
+  {{ $p.Content }}
+</article>
+{{ end }}
+{{ end }}

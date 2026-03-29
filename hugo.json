@@ -1,0 +1,17 @@
+{
+  "baseURL": "https://sjkingo.github.io/works/",
+  "languageCode": "en-au",
+  "title": "Works",
+  "theme": "hugo-bearblog",
+  "params": {
+    "description": ""
+  },
+  "menu": {
+    "main": [
+      { "name": "Posts", "url": "/posts/", "weight": 1 }
+    ]
+  },
+  "outputs": {
+    "home": ["HTML"]
+  }
+}
