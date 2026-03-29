@@ -13,5 +13,10 @@
   },
   "outputs": {
     "home": ["HTML"]
-  }
+  },
+  "caches": {
+      "images": {
+         "dir": ":cacheDir/images"
+      }
+   }
 }
