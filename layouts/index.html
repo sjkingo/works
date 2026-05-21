@@ -1,5 +1,5 @@
 {{ define "main" }}
-{{ $pages := where .Site.RegularPages "Section" "posts" }}
+{{ $pages := sort (where .Site.RegularPages "Section" "posts") "Weight" "asc" }}
 {{ $last := sub (len $pages) 1 }}
 {{ range $i, $p := $pages }}
 {{ $anchor := $p.Title | urlize }}
